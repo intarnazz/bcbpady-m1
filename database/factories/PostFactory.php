@@ -18,14 +18,14 @@ class PostFactory extends Factory
 
     public function definition()
     {
-        $title = $this->faker->realText((rand(10,40)));#Заполнение колонки title данными из faker в диапазоне 10 - 40 слов
-        $short_title = mb_strlen($title)>30 ? mb_substr($title, 0, 30) . '...' : $title;#Укороченный title создаётся при выполнении условия тернарного оператора
-        $created = $this->faker->dateTimeBetween('-30 days', '-1 days');#Колонка created - создан, заполняется датой между -1 и -30 днём
+        $title = $this->faker->realText((rand(10,40)));
+        $short_title = mb_strlen($title)>30 ? mb_substr($title, 0, 30) . '...' : $title;
+        $created = $this->faker->dateTimeBetween('-30 days', '-1 days');
         return [
             'title' => $title,
             'short_title' => $short_title,
-            'author_id' => rand(1,4),
-            'descr' => $this->faker->realText(rand(100,500)),#заполнение описания данными из faker
+            'autor_id' => rand(1,4),
+            'descr' => $this->faker->realText(rand(100,500)),
             'created_at' => $created,
             'updated_at' => $created,
         ];

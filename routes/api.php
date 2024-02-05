@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ControllersFlovers\Get\Flovers;
 
-// use App\Http\Controllers\Users\GetUser;
+use App\Http\Controllers\Users\GetUsers;
+use App\Http\Controllers\Posts\GetPosts;
 
-// Route::get('/GetFlovers', [Flovers::class, 'floversAll']);
+Route::get('/GetUsers', [GetUsers::class, 'GetAll']);
+Route::get('/GetPosts', [GetPosts::class, 'GetAll']);
 
 
 
