@@ -18,10 +18,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllersFlovers\Get\Flovers;
 
 use App\Http\Controllers\Users\GetUsers;
-use App\Http\Controllers\Posts\GetPosts;
+use App\Http\Controllers\Posts\PostController;
 
 Route::get('/GetUsers', [GetUsers::class, 'GetAll']);
-Route::get('/GetPosts', [GetPosts::class, 'GetAll']);
+Route::get('/GetPosts', [PostController::class, 'GetAll']);
+Route::get('/GetPost/{id}', [PostController::class, 'GetPost']);
+Route::get('/GetImg/{id}', [PostController::class, 'GetImg']);
+Route::get('/PostDel/{id}', [PostController::class, 'PostDel']);
+Route::post('/PostPost', [PostController::class, 'PostPost']);
 
 
 
