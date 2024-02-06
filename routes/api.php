@@ -25,6 +25,7 @@ Route::get('/GetPosts', [PostController::class, 'GetAll']);
 Route::get('/GetPost/{id}', [PostController::class, 'GetPost']);
 Route::get('/GetImg/{id}', [PostController::class, 'GetImg']);
 Route::get('/PostDel/{id}', [PostController::class, 'PostDel']);
+Route::get('/test', [PostController::class, 'test']);
 Route::post('/PostPost', [PostController::class, 'PostPost']);
 
 

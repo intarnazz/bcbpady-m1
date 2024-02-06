@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Posts\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 
@@ -42,6 +43,14 @@ class PostController extends Controller
       'img' => $post->img,
     ];
     return response()->json($res);
+  }
+  public function Test()
+  {
+    $response = Http::post('http://127.0.0.1:5000/login', [
+      'login'=> 'Канада',
+      'password'=> '123',
+    ]);
+    return response($response);
   }
   public function GetImg($id)
   {
