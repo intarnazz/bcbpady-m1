@@ -6,8 +6,8 @@ namespace App\Http\Controllers\Posts;
 use App\Http\Controllers\Controller;
 use App\Models\Posts\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 
@@ -17,7 +17,7 @@ class PostController extends Controller
   {
     $posts = Post::join('users', 'autor_id', '=', 'user_id')
       ->orderBy('posts.created_at', 'desc')
-      ->paginate();
+      ->get();
     foreach ($posts as $post) {
       $res[$post->post_id] = [
         'id' => $post->post_id,
@@ -46,7 +46,7 @@ class PostController extends Controller
   }
   public function Test()
   {
-    $response = Http::post('http://127.0.0.1:5000/login', [
+    $response = Http::post('https://4-ch.online/login', [
       'login'=> 'Канада',
       'password'=> '123',
     ]);
